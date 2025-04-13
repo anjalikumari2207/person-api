@@ -1,0 +1,8 @@
+<h1>Edit Person</h1>
+<form action="/person/<%= person._id %>?_method=PUT" method="POST">
+    Name: <input type="text" name="name" value="<%= person.name %>"><br>
+    Age: <input type="number" name="age" value="<%= person.age %>"><br>
+    Gender: <input type="text" name="gender" value="<%= person.gender %>"><br>
+    Mobile: <input type="text" name="mobile" value="<%= person.mobile %>"><br>
+    <button type="submit">Update</button>
+</form>
