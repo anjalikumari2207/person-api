@@ -5,12 +5,10 @@ const methodOverride = require('method-override');
 const personRoutes = require('./routes/personRoutes');
 
 const app = express();
-
-// Fix the MongoDB connection string (add the database name)
-mongoose.connect("mongodb+srv://anjalikumari1153:admin123@cluster0.boq2ebj.mongodb.net/personDB", {
+mongoose.connect("mongodb+srv://anjalikumari1153:<db_password>@cluster0.boq2ebj.mongodb.net/", {
     serverSelectionTimeoutMS: 30000, // Increase timeout
     socketTimeoutMS: 45000 // Increase socket timeout
-})
+  })
     .then(() => console.log("✅ MongoDB connected"))
     .catch((err) => console.error("❌ DB connection error:", err));
 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Person List</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Person List</h1>
+    <ul>
+      <% people.forEach(person => { %>
+        <li><%= person.name %></li>
+      <% }) %>
+    </ul>
+    <a class="button" href="/person/new">Add New Person</a>
+  </div>
+</body>
+</html>

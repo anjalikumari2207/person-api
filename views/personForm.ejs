@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= button %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <h1><%= button %></h1>
+  <form action="<%= action %>" method="<%= method %>">
+    <input name="name" value="<%= person.name || '' %>" placeholder="Name" required />
+    <input name="age" type="number" value="<%= person.age || '' %>" placeholder="Age" required />
+    <input name="gender" value="<%= person.gender || '' %>" placeholder="Gender" required />
+    <input name="mobile" value="<%= person.mobile || '' %>" placeholder="Mobile" required />
+    <button type="submit"><%= button %></button>
+  </form>
+</body>
+</html>

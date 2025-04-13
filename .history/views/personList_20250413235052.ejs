@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Person List</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <h1>People</h1>
+  <a href="/person/add">+ Add Person</a>
+  <table>
+    <thead><tr><th>Name</th><th>Age</th><th>Gender</th><th>Mobile</th><th>Actions</th></tr></thead>
+    <tbody>
+      <% people.forEach(person => { %>
+        <tr>
+          <td><%= person.name %></td>
+          <td><%= person.age %></td>
+          <td><%= person.gender %></td>
+          <td><%= person.mobile %></td>
+          <td>
+            <a href="/person/<%= person._id %>/edit">Edit</a>
+            <form method="POST" action="/person/<%= person._id %>?_method=DELETE" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

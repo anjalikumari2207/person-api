@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Person List</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Person List</h1>
+
+    <% if (people && people.length > 0) { %>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% people.forEach(person => { %>
+            <tr>
+              <td><%= person.name %></td>
+              <td><%= person.email %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No persons found.</p>
+    <% } %>
+
+  </div>
+</body>
+</html>

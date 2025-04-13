@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Person List</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- Make sure this points to the correct CSS file -->
+</head>
+<body>
+  <div class="container">
+    <h1>Person List</h1>
+
+    <% if (people && people.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Mobile Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% people.forEach(person => { %>
+            <tr>
+              <td><%= person.name %></td>
+              <td><%= person.age %></td>
+              <td><%= person.gender %></td>
+              <td><%= person.mobileNumber %></td>
+              <td>
+                <a href="/person/<%= person._id %>/edit">
+                  <button>Edit</button>
+                </a>
+                <form action="/person/<%= person._id %>?_method=DELETE" method="POST" style="display:inline;">
+                  <button type="submit" style="background-color: #f44336;">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No persons found.</p>
+    <% } %>
+
+    <a href="/person/add">
+      <button class="add-btn">Add New Person</button>
+    </a>
+  </div>
+</body>
+</html>

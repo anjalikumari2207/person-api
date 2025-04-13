@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Person List</title>
+  </head>
+  <body>
+    <h1>People:</h1>
+    <ul>
+      <% people.forEach(person => { %>
+        <li><%= person.name %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
